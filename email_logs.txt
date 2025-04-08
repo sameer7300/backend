@@ -1,0 +1,42 @@
+
+
+EMAIL SENT TO sameergul321@gmail.com AT 2025-04-04 15:48:40,895
+Subject: Password Reset - Your Portfolio
+Sender: Portfolio Admin <no-reply@brevo.com>
+API Response: {'message_id': '<202504041048.40437946385@smtp-relay.mailin.fr>',
+ 'message_ids': None}
+
+
+EMAIL SENT TO sameergul12345@gmail.com AT 2025-04-04 15:49:18,732
+Subject: Password Reset - Your Portfolio
+Sender: Portfolio Admin <no-reply@brevo.com>
+API Response: {'message_id': '<202504041049.83268717851@smtp-relay.mailin.fr>',
+ 'message_ids': None}
+
+
+EMAIL SENT TO sameergul12345@gmail.com AT 2025-04-04 15:50:30,135
+Subject: Password Reset - Your Portfolio
+Sender: Portfolio Admin <no-reply@brevo.com>
+API Response: {'message_id': '<202504041050.26129085560@smtp-relay.mailin.fr>',
+ 'message_ids': None}
+
+
+EMAIL SENT TO sameergul12345@gmail.com AT 2025-04-04 15:52:33,016
+Subject: Password Reset - Your Portfolio
+Sender: Portfolio Admin <no-reply@brevo.com>
+API Response: {'message_id': '<202504041052.35694352471@smtp-relay.mailin.fr>',
+ 'message_ids': None}
+
+
+EMAIL SENT TO sameergul12345@gmail.com AT 2025-04-04 15:53:34,501
+Subject: Password Reset - Your Portfolio
+Sender: Portfolio Admin <no-reply@brevo.com>
+API Response: {'message_id': '<202504041053.45770976800@smtp-relay.mailin.fr>',
+ 'message_ids': None}
+
+
+EMAIL SENT TO sameergul12345@gmail.com AT 2025-04-04 15:53:58,565
+Subject: Password Reset - Your Portfolio
+Sender: Portfolio Admin <no-reply@brevo.com>
+API Response: {'message_id': '<202504041053.14217168005@smtp-relay.mailin.fr>',
+ 'message_ids': None}
