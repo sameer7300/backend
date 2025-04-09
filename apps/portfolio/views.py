@@ -1,11 +1,9 @@
+from django.http import HttpResponse, JsonResponse, FileResponse
+from django.conf import settings
+from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, permissions, status
 from rest_framework.decorators import action
-from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404
-from django.core.mail import send_mail
-from django.conf import settings
 from .models import (
     Project,
     ProjectImage,
@@ -24,7 +22,8 @@ from .serializers import (
     ContactSerializer,
     ContactAdminSerializer,
 )
-from apps.accounts.permissions import IsAdmin
+from ..accounts.permissions import IsAdmin
+from core.email_utils import send_mail
 
 class ProjectViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all()
@@ -107,7 +106,7 @@ class TimelineViewSet(viewsets.ModelViewSet):
 class ResumeViewSet(viewsets.ModelViewSet):
     queryset = Resume.objects.all()
     serializer_class = ResumeSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [permissions.AllowAny]
 
     def get_object(self):
         # Always return the first resume or create one if none exists
@@ -244,11 +243,12 @@ Message:
 This message was sent from the contact form on {settings.SITE_NAME}.
 '''
                 
+                # Use our custom email utility instead of Django's send_mail
                 send_mail(
-                    f'New Contact Form Submission: {contact.subject}',
-                    plain_text,
-                    settings.DEFAULT_FROM_EMAIL,
-                    [settings.ADMIN_EMAIL],
+                    subject=f'New Contact Form Submission: {contact.subject}',
+                    message=plain_text,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[settings.ADMIN_EMAIL],
                     html_message=html_content,
                     fail_silently=False,
                 )

@@ -1,7 +1,7 @@
 from django.http import HttpResponse
-from django.core.mail import send_mail
 from django.conf import settings
 import logging
+from core.email_utils import send_mail
 
 logger = logging.getLogger(__name__)
 
@@ -12,12 +12,12 @@ def test_email(request):
         logger.info(f"Email settings: HOST={settings.EMAIL_HOST}, PORT={settings.EMAIL_PORT}, USER={settings.EMAIL_HOST_USER}")
         logger.info(f"TLS={settings.EMAIL_USE_TLS}, SSL={settings.EMAIL_USE_SSL}")
         
-        # Try to send a test email
+        # Try to send a test email using our custom email utility
         send_mail(
-            'Test Email from Portfolio Site',
-            'This is a test email to verify that the email functionality is working correctly.',
-            settings.DEFAULT_FROM_EMAIL,
-            ['sameergul321@gmail.com'],
+            subject='Test Email from Portfolio Site',
+            message='This is a test email to verify that the email functionality is working correctly.',
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=['sameergul321@gmail.com'],
             fail_silently=False,
         )
         
